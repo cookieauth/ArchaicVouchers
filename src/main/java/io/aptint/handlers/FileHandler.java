@@ -1,11 +1,10 @@
 package io.aptint.handlers;
 
-import io.aptint.BraveVouchers;
+import io.aptint.ProVouchers;
 import io.aptint.utils.AIFile;
 
 import java.io.File;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -13,12 +12,12 @@ import java.util.Map;
 
 public class FileHandler {
 
-    private final BraveVouchers braveVouchers;
+    private final ProVouchers proVouchers;
 
     private Map<AIFile, String> voucherFiles;
 
     public FileHandler() throws IOException {
-        braveVouchers = BraveVouchers.getBraveVouchers();
+        proVouchers = ProVouchers.getBraveVouchers();
         voucherFiles = new HashMap<>();
         loadVouchersAsFiles();
     }
@@ -26,10 +25,10 @@ public class FileHandler {
     private void loadVouchersAsFiles() throws IOException {
         List<String> files = new ArrayList<>();
         Map<AIFile, String> fileMap = new HashMap<>();
-        for (String name : (new File(braveVouchers.getDataFolder(), "/vouchers")).list()) {
+        for (String name : (new File(proVouchers.getDataFolder(), "/vouchers")).list()) {
             if (name.endsWith(".yml")) {
                 name = name.replaceAll(".yml", "");
-                fileMap.put(new AIFile(braveVouchers.getDataFolder(), name), name);
+                fileMap.put(new AIFile(proVouchers.getDataFolder(), name), name);
             }
         }
         this.voucherFiles = fileMap;

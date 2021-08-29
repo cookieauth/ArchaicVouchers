@@ -1,6 +1,6 @@
 package io.aptint.commands;
 
-import io.aptint.BraveVouchers;
+import io.aptint.ProVouchers;
 import io.aptint.handlers.MessageHandler;
 import io.aptint.handlers.PermissionHandler;
 import io.aptint.handlers.TSAVHandler;
@@ -10,9 +10,9 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class BVCommand  implements CommandExecutor {
+public class PVCommand implements CommandExecutor {
 
-    private final BraveVouchers instance = BraveVouchers.getBraveVouchers();
+    private final ProVouchers instance = ProVouchers.getBraveVouchers();
     private final TSAVHandler tsavHandler = instance.getTSAVHandler();
 
     @Override

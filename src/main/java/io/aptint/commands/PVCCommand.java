@@ -1,6 +1,6 @@
 package io.aptint.commands;
 
-import io.aptint.BraveVouchers;
+import io.aptint.ProVouchers;
 import io.aptint.handlers.MessageHandler;
 import io.aptint.handlers.PermissionHandler;
 import io.aptint.utils.ServerUtil;
@@ -9,7 +9,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class BCCommand  implements CommandExecutor {
+public class PVCCommand implements CommandExecutor {
 
     /* TODO:
         PLAYER:
@@ -22,7 +22,7 @@ public class BCCommand  implements CommandExecutor {
 
        TODO:
         ADMIN:
-        setexpiry
+        setexpire
         setlimit
         setstatus
         remove
@@ -30,7 +30,7 @@ public class BCCommand  implements CommandExecutor {
         awardall
      */
 
-    private static final BraveVouchers instance = BraveVouchers.getBraveVouchers();
+    private static final ProVouchers instance = ProVouchers.getBraveVouchers();
     private final io.aptint.handlers.TSACHandler TSACHandler = instance.getTSACHandler();
 
     public boolean onCommand(CommandSender commandSender, Command command, String string, String[] args) {

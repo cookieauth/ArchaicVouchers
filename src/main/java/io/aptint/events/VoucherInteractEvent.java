@@ -1,8 +1,8 @@
 package io.aptint.events;
 
 
+import io.aptint.ProVouchers;
 import io.aptint.api.Voucher;
-import io.aptint.BraveVouchers;
 import io.aptint.handlers.TSAVHandler;
 import io.aptint.handlers.VersionHandler;
 import io.aptint.utils.ServerUtil;
@@ -20,7 +20,7 @@ public class VoucherInteractEvent implements Listener {
     // Check to see if user has more than one of a voucher. Run them separately, or all together if using shift + right click
     // if ((event.getItem() != null) && event.getItem().getAmount() > 1) return;
 
-    private final BraveVouchers instance = BraveVouchers.getBraveVouchers();
+    private final ProVouchers instance = ProVouchers.getBraveVouchers();
     private final TSAVHandler tsavHandler = instance.getTSAVHandler();
 
     @EventHandler

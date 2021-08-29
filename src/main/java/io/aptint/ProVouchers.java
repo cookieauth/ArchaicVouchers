@@ -1,10 +1,10 @@
 package io.aptint;
 
-import io.aptint.commands.BCCommand;
-import io.aptint.commands.BVCommand;
+import io.aptint.commands.PVCCommand;
+import io.aptint.commands.PVCommand;
 import io.aptint.events.VoucherInteractEvent;
-import io.aptint.handlers.TSACHandler;
 import io.aptint.handlers.PermissionHandler;
+import io.aptint.handlers.TSACHandler;
 import io.aptint.handlers.TSAVHandler;
 import io.aptint.handlers.VoucherHandler;
 import org.bukkit.Bukkit;
@@ -13,16 +13,16 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Objects;
 
-public class BraveVouchers extends JavaPlugin {
+public class ProVouchers extends JavaPlugin {
 
-    // TODO: Add v1.8.3 through v1.16.5 support.
+    // TODO: Add v1.8.3 through v1.17.1 support.
     // TODO: Add MySQL and SQLite Support for keys.
     // TODO: Add expiration times for codes.
-    // TODO: Add amount limits for codes.
+    // TODO: Add quantity limits for codes.
     // TODO: Add the ability to enable/disable vouchers/codes.
 
 
-    private static BraveVouchers braveVouchers;
+    private static ProVouchers proVouchers;
     private static VoucherHandler voucherHandler;
     private static PermissionHandler permissionHandler;
     private static TSAVHandler TSAVHandler;
@@ -37,7 +37,7 @@ public class BraveVouchers extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        braveVouchers = this;
+        proVouchers = this;
 
         registerEvents();
         registerCommands();
@@ -53,9 +53,9 @@ public class BraveVouchers extends JavaPlugin {
     }
 
     private void registerCommands() {
-        Objects.requireNonNull(Bukkit.getPluginCommand("bravevoucher")).setExecutor(new BVCommand());
+        Objects.requireNonNull(Bukkit.getPluginCommand("bravevoucher")).setExecutor(new PVCommand());
 
-        Objects.requireNonNull(Bukkit.getPluginCommand("bravecodes")).setExecutor(new BCCommand());
+        Objects.requireNonNull(Bukkit.getPluginCommand("bravecodes")).setExecutor(new PVCCommand());
     }
 
     private void registerHandlers() {
@@ -64,15 +64,21 @@ public class BraveVouchers extends JavaPlugin {
         TSACHandler = new TSACHandler();
     }
 
-    public static BraveVouchers getBraveVouchers() {
-        return braveVouchers;
+    public static ProVouchers getBraveVouchers() {
+        return proVouchers;
     }
 
     public static VoucherHandler getVoucherHandler() {
         return voucherHandler;
     }
-    public TSACHandler getTSACHandler() { return TSACHandler; }
-    public TSAVHandler getTSAVHandler() { return TSAVHandler; }
+
+    public TSACHandler getTSACHandler() {
+        return TSACHandler;
+    }
+
+    public TSAVHandler getTSAVHandler() {
+        return TSAVHandler;
+    }
 
     public FileConfiguration getVoucherConfig() {
         return voucherConfig;
