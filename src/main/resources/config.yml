@@ -1,0 +1,49 @@
+settings:
+  prefix: ''
+  metrics: false
+
+vouchers:
+  my_example:
+    display-item:
+      material: 'AMETHYST_SHARD'
+      name: ''
+      lore:
+        - ''
+      glowing: false
+      enchanted: true
+    reward:
+      message: ''
+      commands:
+        - ''
+    options:
+      sound:
+        enabled: true
+        type: ''
+      particle:
+        enabled: true
+        type: ''
+      limit:
+        enabled: false
+        limit: 10
+    blacklist:
+      worlds:
+        enabled: false
+        message: ''
+        world-list:
+          - 'world'
+      permissions:
+        enabled: false
+        message: ''
+        permission-list:
+          - ""
+    whitelist:
+      worlds:
+        enabled: false
+        message: ''
+        world-list:
+          - 'world_the_nether'
+      permissions:
+        enabled: false
+        message: ''
+        permission-list:
+          - ''

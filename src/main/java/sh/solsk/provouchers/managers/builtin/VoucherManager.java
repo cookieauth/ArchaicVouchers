@@ -1,10 +1,13 @@
-package io.aptint.handlers;
+package sh.solsk.provouchers.managers.builtin;
 
-import io.aptint.api.Voucher;
+import sh.solsk.provouchers.api.Voucher;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 
-public class VoucherHandler {
+public class VoucherManager {
 
     /*
     Load vouchers from each of their files into a voucher map so that
@@ -14,6 +17,9 @@ public class VoucherHandler {
      */
 
     private List<Voucher> voucherList;
+    private Map<UUID, Voucher> twoStepMap;
+
+    private boolean tsaEnabled;
 
     public void loadVouchers() {
         // TODO: Load vouchers from /vouchers/voucher_example.yml
@@ -31,4 +37,23 @@ public class VoucherHandler {
         return this.voucherList;
     }
 
+    public void setVoucherList(List<Voucher> voucherList) {
+        this.voucherList = voucherList;
+    }
+
+    public Map<UUID, Voucher> getTwoStepMap() {
+        return twoStepMap;
+    }
+
+    public void setTwoStepMap(Map<UUID, Voucher> twoStepMap) {
+        this.twoStepMap = twoStepMap;
+    }
+
+    public boolean isTsaEnabled() {
+        return tsaEnabled;
+    }
+
+    public void setTsaEnabled(boolean tsaEnabled) {
+        this.tsaEnabled = tsaEnabled;
+    }
 }

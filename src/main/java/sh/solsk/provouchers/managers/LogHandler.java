@@ -1,4 +1,4 @@
-package io.aptint.handlers;
+package sh.solsk.provouchers.managers;
 
 public class LogHandler {
 
